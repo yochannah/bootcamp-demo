@@ -8,3 +8,9 @@
  ::initialize-db
  (fn [_ _]
    db/default-db))
+
+(re-frame/reg-event-db
+ ::update-number
+ (fn [db [_ the-number]]
+   (assoc db :the-number the-number)
+   ))

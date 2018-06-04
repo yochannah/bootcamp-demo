@@ -3,6 +3,12 @@
    [re-frame.core :as re-frame]))
 
 (re-frame/reg-sub
- ::name
+ ::the-number
  (fn [db]
-   (:name db)))
+   (:the-number db)))
+
+
+ (re-frame/reg-sub
+  ::doubled-number
+  (fn [db]
+    (* 2 (:the-number db))))
